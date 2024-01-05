@@ -18,24 +18,28 @@ struct TaskListView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.dueDate!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.dueDate!, formatter: itemFormatter)
+            VStack{
+                ZStack{
+                    List {
+                        ForEach(items) { item in
+                            NavigationLink(destination: TaskEditView()) {
+                                Text(item.dueDate!, formatter: itemFormatter)
+                            }
+                        }
+                        .onDelete(perform: deleteItems)
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            EditButton()
+                        }
+                        ToolbarItem {
+                            
+                        }
+                    }
                     
+                    FloatingButton()
                 }
-            }
+            }.navigationTitle("To Do List")
         }
     }
 
