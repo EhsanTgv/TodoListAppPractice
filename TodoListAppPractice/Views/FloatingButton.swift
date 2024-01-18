@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FloatingButton: View {
+    @EnvironmentObject var dateHolder: DateHolder
+    
     var body: some View {
         Spacer()
         HStack{
