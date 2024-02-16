@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+extension TaskItem {
+    
+    func isCompleted() -> Bool {
+        return completedDate != nil
+    }
+    
+}
