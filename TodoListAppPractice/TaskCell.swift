@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct TaskCell: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @EnvironmentObject var dateHolder:DateHolder
+    @ObservedObject var passedTaskItem:TaskItem
+    
+    var body: some View{
+        Text(passedTaskItem.name ?? "")
+            .padding(.horizontal)
     }
 }
 
-#Preview {
-    TaskCell()
+struct TaskCell_Previews: PreviewProvider{
+    static var previews: some View {
+        TaskCell(passedTaskItem: TaskItem())
+    }
 }
+

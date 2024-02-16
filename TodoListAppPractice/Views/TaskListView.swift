@@ -10,6 +10,7 @@ import CoreData
 
 struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var dateHolder: DateHolder
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
@@ -22,8 +23,9 @@ struct TaskListView: View {
                 ZStack{
                     List {
                         ForEach(items) { item in
-                            NavigationLink(destination: TaskEditView()) {
-                                Text(item.dueDate!, formatter: itemFormatter)
+                            NavigationLink(destination: TaskEditView(passedTaskItem: item, initialDate: Date()).environmentObject(dateHolder)) {
+                                TaskCell(passedTaskItem: item)
+                                    .environmentObject(dateHolder)
                             }
                         }
                         .onDelete(perform: deleteItems)
@@ -37,18 +39,9 @@ struct TaskListView: View {
                         }
                     }
                     
-                    FloatingButton()
+                    FloatingButton().environmentObject(dateHolder)
                 }
             }.navigationTitle("To Do List")
-        }
-    }
-    
-    func saveContext(_ context: NSManagedObjectContext) {
-        do {
-            try context.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
 
@@ -56,7 +49,7 @@ struct TaskListView: View {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
 
-            saveContext(viewContext)
+            dateHolder.saveContext(viewContext)
         }
     }
 }

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct TaskEditView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var dateHolder: DateHolder
     
     @State var selectedTaskItem: TaskItem?
     @State var name: String
@@ -65,6 +67,9 @@ struct TaskEditView: View {
             selectedTaskItem?.name = name
             selectedTaskItem?.dueDate = dueDate
             selectedTaskItem?.scheduleTime = schedule
+            
+            dateHolder.saveContext(viewContext)
+            self.presentationMode.wrappedValue.dismiss()
         }
     }
 }
