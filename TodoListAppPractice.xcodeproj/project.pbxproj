@@ -95,11 +95,11 @@
 			isa = PBXGroup;
 			children = (
 				3D72EF5C2B3AA060000594F7 /* TaskListView.swift */,
+				3DE233172BD62ECA0032C3A0 /* DateScroller.swift */,
 				3D72EF6A2B3AA4EA000594F7 /* FloatingButton.swift */,
 				3D72EF6D2B3AA548000594F7 /* TaskEditView.swift */,
 				3D9FDFAC2B6D0AEC00DD1B3C /* TaskCell.swift */,
 				3DF190172B7F45D70005E966 /* CheckBoxView.swift */,
-				3DE233172BD62ECA0032C3A0 /* DateScroller.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

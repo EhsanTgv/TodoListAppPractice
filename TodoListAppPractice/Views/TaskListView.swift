@@ -12,10 +12,10 @@ struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dateHolder: DateHolder
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<TaskItem>
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<TaskItem>
 
     var body: some View {
         NavigationView {
@@ -25,7 +25,7 @@ struct TaskListView: View {
                     .environmentObject(dateHolder)
                 ZStack{
                     List {
-                        ForEach(items) { item in
+                        ForEach(dateHolder.taskItems) { item in
                             NavigationLink(destination: TaskEditView(passedTaskItem: item, initialDate: Date()).environmentObject(dateHolder)) {
                                 TaskCell(passedTaskItem: item)
                                     .environmentObject(dateHolder)
@@ -50,7 +50,7 @@ struct TaskListView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { dateHolder.taskItems[$0] }.forEach(viewContext.delete)
 
             dateHolder.saveContext(viewContext)
         }
