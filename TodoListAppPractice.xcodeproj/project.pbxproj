@@ -15,6 +15,7 @@
 		3D72EF632B3AA062000594F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D72EF622B3AA062000594F7 /* Preview Assets.xcassets */; };
 		3D72EF6B2B3AA4EA000594F7 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72EF6A2B3AA4EA000594F7 /* FloatingButton.swift */; };
 		3D72EF6E2B3AA548000594F7 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72EF6D2B3AA548000594F7 /* TaskEditView.swift */; };
+		3D81B9C22BF48891009A7413 /* TaskFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81B9C12BF48891009A7413 /* TaskFilter.swift */; };
 		3D9FDFAD2B6D0AEC00DD1B3C /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FDFAC2B6D0AEC00DD1B3C /* TaskCell.swift */; };
 		3DB6F1CD2B59059A0096F67D /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6F1CC2B59059A0096F67D /* DateHolder.swift */; };
 		3DE233182BD62ECB0032C3A0 /* DateScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE233172BD62ECA0032C3A0 /* DateScroller.swift */; };
@@ -34,6 +35,7 @@
 		3D72EF642B3AA062000594F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D72EF6A2B3AA4EA000594F7 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		3D72EF6D2B3AA548000594F7 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
+		3D81B9C12BF48891009A7413 /* TaskFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFilter.swift; sourceTree = "<group>"; };
 		3D9FDFAC2B6D0AEC00DD1B3C /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		3DB6F1CC2B59059A0096F67D /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
 		3DE233172BD62ECA0032C3A0 /* DateScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScroller.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				3DB6F1CC2B59059A0096F67D /* DateHolder.swift */,
 				3D72EF572B3AA060000594F7 /* Persistence.swift */,
 				3DF1901A2B7F49870005E966 /* TaskItemExtension.swift */,
+				3D81B9C12BF48891009A7413 /* TaskFilter.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				3DF1901B2B7F49870005E966 /* TaskItemExtension.swift in Sources */,
 				3D72EF562B3AA060000594F7 /* TodoListAppPracticeApp.swift in Sources */,
 				3D72EF5B2B3AA060000594F7 /* TodoListAppPractice.xcdatamodeld in Sources */,
+				3D81B9C22BF48891009A7413 /* TaskFilter.swift in Sources */,
 				3D72EF6B2B3AA4EA000594F7 /* FloatingButton.swift in Sources */,
 				3DF190182B7F45D70005E966 /* CheckBoxView.swift in Sources */,
 				3D9FDFAD2B6D0AEC00DD1B3C /* TaskCell.swift in Sources */,
